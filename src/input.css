@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   Custom component classes (compiled by CLI)
+   ============================================ */
+
+@layer components {
+  /* Navigation */
+  .nav-link {
+    @apply px-4 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300
+           hover:text-brand-600 dark:hover:text-brand-400
+           hover:bg-slate-100 dark:hover:bg-slate-800 transition;
+  }
+
+  .nav-link.active {
+    @apply text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-900/30;
+  }
+
+  .dropdown-item {
+    @apply block px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300
+           hover:bg-brand-50 dark:hover:bg-brand-900/40
+           hover:text-brand-700 dark:hover:text-brand-300 transition;
+  }
+
+  .mobile-nav-link {
+    @apply block px-4 py-3 rounded-lg text-slate-700 dark:text-slate-300
+           hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition;
+  }
+
+  /* Cards */
+  .feature-card {
+    @apply bg-white dark:bg-slate-900 rounded-2xl p-6
+           border border-slate-200 dark:border-slate-800
+           shadow-soft hover:shadow-card transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .content-card {
+    @apply bg-white dark:bg-slate-900 rounded-2xl
+           border border-slate-200 dark:border-slate-800
+           p-6 sm:p-8 shadow-soft;
+  }
+
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
+           bg-brand-100 dark:bg-brand-900/40 text-brand-700 dark:text-brand-300;
+  }
+
+  .badge-soon {
+    @apply bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300;
+  }
+
+  /* Page hero */
+  .page-hero {
+    @apply relative pt-28 lg:pt-32 pb-16 lg:pb-20
+           bg-gradient-to-br from-brand-950 via-brand-900 to-slate-900
+           text-white overflow-hidden;
+  }
+
+  /* Section label */
+  .section-label {
+    @apply inline-block text-brand-600 dark:text-brand-400
+           font-semibold text-sm tracking-wider uppercase mb-3;
+  }
+
+  /* Forms */
+  .form-input {
+    @apply w-full px-4 py-3 rounded-xl
+           border border-slate-300 dark:border-slate-700
+           bg-white dark:bg-slate-900
+           text-slate-900 dark:text-white
+           placeholder-slate-400
+           focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent
+           transition;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-brand-600 hover:bg-brand-700 text-white font-semibold
+           px-6 py-3 rounded-full transition shadow-soft hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-slate-100 dark:bg-slate-800
+           hover:bg-slate-200 dark:hover:bg-slate-700
+           text-slate-800 dark:text-slate-200 font-semibold
+           px-6 py-3 rounded-full transition;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2
+           bg-gold-500 hover:bg-gold-600 text-slate-900 font-bold
+           px-6 py-3 rounded-full transition shadow-soft;
+  }
+}
+
+/* Base refinements */
+@layer base {
+  *:focus-visible {
+    outline: 2px solid #0d9488;
+    outline-offset: 2px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Print */
+@media print {
+  header,
+  footer,
+  #theme-toggle,
+  #mobile-menu-btn {
+    display: none !important;
+  }
+}
