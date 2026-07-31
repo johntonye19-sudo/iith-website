@@ -1,0 +1,26 @@
+{
+  "name": "iith-yenagoa-website",
+  "version": "1.0.0",
+  "description": "Official website for International Institute of Tourism and Hospitality, Yenagoa",
+  "private": true,
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/input.css -o ./css/styles.css --watch",
+    "build": "npx tailwindcss -i ./src/input.css -o ./css/styles.css --minify",
+    "build:dev": "npx tailwindcss -i ./src/input.css -o ./css/styles.css",
+    "build:postcss": "npx postcss ./src/input.css -o ./css/styles.css --verbose",
+    "metrics": "bash ./scripts/purge-metrics.sh",
+    "build:metrics": "npx tailwindcss -i ./src/input.css -o ./css/styles.css --minify && bash ./scripts/purge-metrics.sh"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "not dead",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.17"
+  }
+}
